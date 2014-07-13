@@ -1,0 +1,20 @@
+Da bi se aplikacija uspjesno povezala sa bazom podataka potrebno je promjeniti conn. string koji se nalazi 
+
+u 
+
+RepositoryTeam36\Program\DrivingSchool\Model\App.Config
+RepositoryTeam36\Program\DrivingSchool\DrivingSchool\App.config
+
+Ubazi podataka potrebno je dodati usera pod securety 
+
+login: 
+username: sef
+pass: sef
+
+
+username: mali
+pass: mali
+
+
+i dati mu ovlasti da ima pravo na bazu, najbolje dbowner, to su ujedno podaci i za login u aplikaciju
+
