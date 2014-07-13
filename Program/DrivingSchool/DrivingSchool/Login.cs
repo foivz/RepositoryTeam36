@@ -22,7 +22,7 @@ namespace DrivingSchool
         }
 
         /// <summary>
-        /// Omogučava vraćanje lozinke imena nakon zatvaranja forme
+        /// Omogučava vraćanje lozinke nakon zatvaranja forme
         /// </summary>
         public string Password
         {

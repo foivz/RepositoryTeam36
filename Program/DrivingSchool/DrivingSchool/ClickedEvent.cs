@@ -12,6 +12,7 @@ namespace DrivingSchool
         /// Moguće vrijednosti koje označavaju pritisnutu tipku.
         /// </summary>
         public enum ClickedButton { Save, Cancel, Print };
+
         public class ClickedButtonEventArgs : EventArgs
         {
             public ClickedButton ClickedButton { get; private set; }
@@ -22,6 +23,7 @@ namespace DrivingSchool
                 this.Name = name;
             }
         }
+
         /// <summary>
         /// Pokreće događaj s informacijama koja je tipka pritisnuta i nazivom kontrole na kojoj je tipka.
         /// </summary>
@@ -29,12 +31,12 @@ namespace DrivingSchool
         /// <param name="name">Naziv kontrole na kojoj se tipka nalazi.</param>
         public void RaiseEvent(ClickedButton button, string name)
         {
-            // TO DO: izmjeniti this
             if (!ButtonClicked.Equals(null))
             {
                 ButtonClicked(this, new ClickedButtonEventArgs(button, name));
             }
         }
+
         public delegate void ClickedButtonEventHandler(object sender, ClickedButtonEventArgs e);
         public event ClickedButtonEventHandler ButtonClicked;
         

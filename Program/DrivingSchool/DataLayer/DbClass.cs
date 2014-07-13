@@ -12,6 +12,11 @@ namespace DataLayer
     public class DbClass
     {
         static DbClass instance = null;
+        AutoskolaEntities context = null;
+
+        /// <summary>
+        /// Vrača instancu klase
+        /// </summary>
         public static DbClass Instance
         {
             get
@@ -24,11 +29,11 @@ namespace DataLayer
             }
         }
 
-        AutoskolaEntities context = null;
-        private DbClass()
+        private DbClass() 
         {
             context = new AutoskolaEntities();
         }
+
         private void Reset()
         {
             context.Dispose();
@@ -48,6 +53,8 @@ namespace DataLayer
             return role.Value.ToString();
         }
 
+        #region Metode za dohvat podataka
+
         /// <summary>
         /// Vraća listu korisnika.
         /// </summary>
@@ -56,77 +63,163 @@ namespace DataLayer
         {
             return context.osoba.AsNoTracking().OfType<korisnik>().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu zaposlenika.
+        /// </summary>
+        /// <returns></returns>
         public List<zaposlenik> GetEmployeesList()
         {
             return context.osoba.AsNoTracking().OfType<zaposlenik>().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu vozila.
+        /// </summary>
+        /// <returns></returns>
         public List<vozilo> GetVehiclesList()
         {
             return context.vozilo.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu drzava.
+        /// </summary>
+        /// <returns></returns>
         public List<drzava> GetCountriesList()
         {
             return context.drzava.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu gradova određene države.
+        /// </summary>
+        /// <param name="countryId">Id države za koju treba vratiti gradove.</param>
+        /// <returns></returns>
         public List<grad> GetTownsForCountry(int countryId)
         {
             return context.grad.AsNoTracking().Where(town => town.drzava_id.Equals(countryId)).ToList();
         }
+
+        /// <summary>
+        /// Vraća listu gradova.
+        /// </summary>
+        /// <returns></returns>
         public List<grad> GetTownsList()
         {
             return context.grad.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu kategorija.
+        /// </summary>
+        /// <returns></returns>
         public List<kategorija> GetCategoriesList()
         {
             return context.kategorija.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu vrsta vozila.
+        /// </summary>
+        /// <returns></returns>
         public List<vozilo_vrsta> GetVehicleTypesList()
         {
             return context.vozilo_vrsta.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu dodatne opreme.
+        /// </summary>
+        /// <returns></returns>
         public List<dodatna_oprema> GetGearList()
         {
             return context.dodatna_oprema.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu vrsta zaposlenika.
+        /// </summary>
+        /// <returns></returns>
         public List<zaposlenik_vrsta> GetEmployeeTypesList()
         {
             return context.zaposlenik_vrsta.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu mogućih statusa korisnika.
+        /// </summary>
+        /// <returns></returns>
         public List<korisnik_status> GetUserStatusList()
         {
             return context.korisnik_status.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu mogućih aktivnosti.
+        /// </summary>
+        /// <returns></returns>
         public List<aktivnost> GetActivitiesList()
         {
             return context.aktivnost.AsNoTracking().ToList();
         }
+
+        /// <summary>
+        /// Vraća listu aktivnosti za određenog korisnika.
+        /// </summary>
+        /// <param name="userId">Id korisnika za kojega treba vratiti aktivnosti.</param>
+        /// <returns></returns>
         public List<korisnik_aktivnost> GetUserActivityForUser(int userId)
         {
             return context.korisnik_aktivnost.AsNoTracking().Where(userActivity => userActivity.korisnik_id.Equals(userId)).OrderBy(userA => userA.od).ToList();
         }
-        public List<v_korisnik> GetReportUsers()
-        {
-            return context.v_korisnik.AsNoTracking().ToList();
-        }
-        public List<v_zaposlenik> GetReportEmployees()
-        {
-            return context.v_zaposlenik.AsNoTracking().ToList();
-        }
-        public List<v_vozilo> GetReportVehicles()
-        {
-            return context.v_vozilo.AsNoTracking().ToList();
-        }
+
+        /// <summary>
+        /// Vraća listu dodatne opreme za određeno vozilo.
+        /// </summary>
+        /// <param name="vehicleId">Id vozila za koje treba vratiti dodatnu opremu.</param>
+        /// <returns></returns>
         public List<vozilo_dodatna_oprema> GetGearForVehicle(int vehicleId)
         {
             return context.vozilo_dodatna_oprema.Where(vg => vg.vozilo_id.Equals(vehicleId)).ToList();
         }
 
-        /*metode za izmjenu*/
         /// <summary>
-        /// Sprema promjene korisnika u bazu.
+        /// Vraća listu korisnika koja služi za prikazivanje u izvješću.
+        /// </summary>
+        /// <returns></returns>
+        public List<v_korisnik> GetReportUsers()
+        {
+            return context.v_korisnik.AsNoTracking().ToList();
+        }
+
+        /// <summary>
+        /// Vraća listu zaposlenika koja služi za prikazivanje u izvješću.
+        /// </summary>
+        /// <returns></returns>
+        public List<v_zaposlenik> GetReportEmployees()
+        {
+            return context.v_zaposlenik.AsNoTracking().ToList();
+        }
+
+        /// <summary>
+        /// Vraća listu vozila koja služi za prikazivanje u izvješću.
+        /// </summary>
+        /// <returns></returns>
+        public List<v_vozilo> GetReportVehicles()
+        {
+            return context.v_vozilo.AsNoTracking().ToList();
+        }
+
+        #endregion
+
+        #region Metode za izmjenu podataka
+
+        /// <summary>
+        /// Sprema promjene podataka o korisnicima u bazu.
         /// </summary>
         /// <param name="changesUsers">Lista korisnik objekata koju treba pohraniti u bazu.</param>
-        /// <returns>Vrijednost true označava uspjesno spremanje.</returns>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForUsers(List<korisnik> changedUsers)
         {
             foreach (korisnik k in changedUsers)
@@ -160,6 +253,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o zaposlenicima u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista zaposlenik objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForEmployees(List<zaposlenik> changedEmployees)
         {
             foreach (zaposlenik e in changedEmployees)
@@ -193,6 +292,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vozilima u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista vozilo objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForVehicles(List<vozilo> changedVehicles)
         {
             foreach (vozilo v in changedVehicles)
@@ -226,6 +331,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o državama u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista drzava objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForCountries(List<drzava> changedCountries)
         {
             foreach (drzava d in changedCountries)
@@ -253,6 +364,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o gradovima u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista grad objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForTowns(List<grad> changedTowns)
         {
             foreach (grad g in changedTowns)
@@ -280,6 +397,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o kategorijama u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista kategorija objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForCategories(List<kategorija> changedCategories)
         {
             foreach (kategorija k in changedCategories)
@@ -309,6 +432,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vrstama vozila u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista vozilo_vrsta objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForVehicleTypes(List<vozilo_vrsta> changedVehicleTypes)
         {
             foreach (vozilo_vrsta v in changedVehicleTypes)
@@ -337,6 +466,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o dodatnoj opremi u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista dodatna_oprema objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForGear(List<dodatna_oprema> changedGear)
         {
             foreach (dodatna_oprema gear in changedGear)
@@ -365,6 +500,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vrstama zaposlenika u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista zaposlenik_vrsta objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForEmployeeTypes(List<zaposlenik_vrsta> changedEmployees)
         {
             foreach (zaposlenik_vrsta empType in changedEmployees)
@@ -393,6 +534,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o statusima korisnika u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista korisnik_status objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForUserStatuses(List<korisnik_status> userStatuses)
         {
             foreach (korisnik_status status in userStatuses)
@@ -419,6 +566,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o aktivnostima u bazu.
+        /// </summary>
+        /// <param name="changedEmployees">Lista aktivnost objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveChangesForActivities(List<aktivnost> userActivities)
         {
             foreach (aktivnost activity in userActivities)
@@ -448,6 +601,13 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o aktivnostima korisnika u bazu.
+        /// </summary>
+        /// <param name="activitiesToDelete">Lista korisnik_aktivnost objekata koje treba obrisati iz baze.</param>
+        /// <param name="userActivities">Lista korisnik_aktivnost objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveUserActivities(List<korisnik_aktivnost> activitiesToDelete, List<korisnik_aktivnost> userActivities)
         {
             foreach (korisnik_aktivnost userActivity in activitiesToDelete)
@@ -485,6 +645,13 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o dodatnoj opremi za određeno vozilo.
+        /// </summary>
+        /// <param name="vehicleId">Id vozila za koje treba spremiti podatke.</param>
+        /// <param name="vehicleGearList">Lista vozilo_dodatna_oprema objekata koju treba pohraniti u bazu.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveVehicleGear(int vehicleId, List<vozilo_dodatna_oprema> vehicleGearList)
         {
             foreach (vozilo_dodatna_oprema gear in vehicleGearList)
@@ -514,7 +681,10 @@ namespace DataLayer
             return true;
         }
 
-        /*metode za brisanje*/
+        #endregion
+
+        #region Metode za brisanje
+
         /// <summary>
         /// Briše iz baze listu objekata osoba.
         /// </summary>
@@ -540,6 +710,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata vozilo.
+        /// </summary>
+        /// <param name="personsList">Lista objekata vozilo koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteVehiclesList(List<vozilo> vehiclesList)
         {
             foreach (vozilo vehicle in vehiclesList)
@@ -557,6 +733,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata drzava.
+        /// </summary>
+        /// <param name="personsList">Lista drzava osoba koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteCountriesList(List<drzava> countriesList)
         {
             foreach (drzava country in countriesList)
@@ -574,6 +756,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata grad.
+        /// </summary>
+        /// <param name="personsList">Lista grad osoba koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteTownsList(List<grad> townsList)
         {
             foreach (grad town in townsList)
@@ -591,6 +779,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata kategorija.
+        /// </summary>
+        /// <param name="personsList">Lista kategorija osoba koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteCategoriesList(List<kategorija> categoriesList)
         {
             foreach (kategorija category in categoriesList)
@@ -608,6 +802,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata vozilo_vrsta.
+        /// </summary>
+        /// <param name="personsList">Lista objekata vozilo_vrsta koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteVehicleTypesList(List<vozilo_vrsta> vehiclesTypesList)
         {
             foreach (vozilo_vrsta type in vehiclesTypesList)
@@ -625,6 +825,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata dodatna_oprema.
+        /// </summary>
+        /// <param name="personsList">Lista objekata dodatna_oprema koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteGearList(List<dodatna_oprema> gearList)
         {
             foreach (dodatna_oprema gear in gearList)
@@ -642,6 +848,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata zaposlenik_vrsta.
+        /// </summary>
+        /// <param name="personsList">Lista objekata zaposlenik_vrsta koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteEmployeeTypesList(List<zaposlenik_vrsta> employeeTypeList)
         {
             foreach (zaposlenik_vrsta empType in employeeTypeList)
@@ -659,6 +871,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata korisnik_status.
+        /// </summary>
+        /// <param name="personsList">Lista objekata korisnik_status koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteStatusesList(List<korisnik_status> statusesList)
         {
             foreach (korisnik_status status in statusesList)
@@ -676,6 +894,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata aktivnost.
+        /// </summary>
+        /// <param name="personsList">Lista objekata aktivnost koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteActivitiesList(List<aktivnost> activitiesList)
         {
             foreach (aktivnost activity in activitiesList)
@@ -693,6 +917,12 @@ namespace DataLayer
             }
             return true;
         }
+
+        /// <summary>
+        /// Briše iz baze listu objekata korisnik_aktivnost.
+        /// </summary>
+        /// <param name="personsList">Lista objekata korisnik_aktivnost koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
         public bool DeleteUserActivitiesList(List<korisnik_aktivnost> userActivitiesList)
         {
             foreach (korisnik_aktivnost userActivity in userActivitiesList)
@@ -710,7 +940,13 @@ namespace DataLayer
             }
             return true;
         }
-        public bool DeleteVehicleGearList(int vehicleId, List<vozilo_dodatna_oprema> vehicleGear)
+
+        /// <summary>
+        /// Briše iz baze listu objekata vozilo_dodatna_oprema
+        /// </summary>
+        /// <param name="vehicleGear">Lista objekata vozilo_dodatna_oprema koju treba obrisati.</param>
+        /// <returns>Vrijednost true označava uspješno brisanje.</returns>
+        public bool DeleteVehicleGearList(List<vozilo_dodatna_oprema> vehicleGear)
         {
             foreach (vozilo_dodatna_oprema gear in vehicleGear)
             {
@@ -728,27 +964,34 @@ namespace DataLayer
             return true;
         }
 
-        /*metode za dodavanje*/
+        #endregion
+
+        #region Metode za dodavanje
+
         /// <summary>
         /// Dodaje novog zaposlenika u bazu.
         /// </summary>
-        /// <param name="newEmployee">Objekt tipa zaposlenik kojega treba dodati.</param>
+        /// <param name="newEmployee">Objekt tipa zaposlenik kojega treba dodati u bazu.</param>
         public void AddEmployee(zaposlenik newEmployee)
         {
             context.osoba.Add(newEmployee);
             context.SaveChanges();
         }
+
         /// <summary>
         /// Dodaje novog korisnika u bazu.
         /// </summary>
-        /// <param name="newUser"></param>
+        /// <param name="newUser">Objekt tipa korisnik kojega treba dodati u bazu.</param>
         public void AddUser(korisnik newUser)
         {
             context.osoba.Add(newUser);
             context.SaveChanges();
         }
 
-        /*metode za provjeru*/
+        #endregion
+
+        #region Metode za provjeru
+
         /// <summary>
         /// Provjerava je li dodjeljeni OIB već OIB neke druge osobe.
         /// </summary>
@@ -762,6 +1005,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li određeni naziv države u bazi.
+        /// </summary>
+        /// <param name="country">Objekt tipa drzava čije ime treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva države.</returns>
         public bool IsCountryNameTaken(drzava country)
         {
             if (context.drzava.Where(c => c.naziv.Equals(country.naziv) && !c.drzava_id.Equals(country.drzava_id)).Count() > 0)
@@ -770,6 +1019,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li grad s određenim imenom za državu u bazi.
+        /// </summary>
+        /// <param name="town">Objekt tipa grad čije ime treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva grada za određenu državu.</returns>
         public bool IsTownNameTakenForCountry(grad town)
         {
             if (context.grad.Where(t => t.naziv.Equals(town.naziv) && t.drzava_id.Equals(town.drzava_id)).Count() > 0)
@@ -778,6 +1033,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv vrste vozila u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa vozilo_vrsta čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsVehicleTypeNameTaken(vozilo_vrsta type)
         {
             if (context.vozilo_vrsta.Where(t => t.naziv.Equals(type.naziv) && !t.vrsta_id.Equals(type.vrsta_id)).Count() > 0)
@@ -786,6 +1047,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv kategorije u bazi.
+        /// </summary>
+        /// <param name="category">Objekt tipa kategorija čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsCategoryNameTaken(kategorija category)
         {
             if (context.kategorija.Where(c => c.naziv.Equals(category.naziv) && !c.kat_id.Equals(category.kat_id)).Count() > 0)
@@ -794,6 +1061,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv za vrstu zaposlenika u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa zaposlenik_vrsta čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsEmployeeTypeNameTaken(zaposlenik_vrsta type)
         {
             if (context.zaposlenik_vrsta.Where(t => t.naziv.Equals(type.naziv) && !t.vrsta_id.Equals(type.vrsta_id)).Count() > 0)
@@ -802,6 +1075,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv za dodatnu opremu u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa dodatna_oprema čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsGearNameTaken(dodatna_oprema gear)
         {
             if (context.dodatna_oprema.Where(g => g.naziv.Equals(gear.naziv) && !g.oprema_id.Equals(gear.oprema_id)).Count() > 0)
@@ -810,6 +1089,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv za staus korisnika u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa zaposlenik_status čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsUserStatusNameTaken(korisnik_status status)
         {
             if (context.korisnik_status.Where(s => s.naziv.Equals(status.naziv)).Count() > 0)
@@ -818,6 +1103,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li naziv za aktivnost u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa aktivnost čiji naziv treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje naziva.</returns>
         public bool IsActivityNameTaken(aktivnost activity)
         {
             if (context.aktivnost.Where(a1 => a1.naziv.Equals(activity.naziv) && !a1.aktivnost_id.Equals(activity.aktivnost_id)).Count() > 0)
@@ -826,6 +1117,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li aktivnost za određenog korisnika u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa korisnik_aktivnost kojega treba provjeriti.</param>
+        /// <returns>Ako za određenog korisnika postoji određena aktivnost i ako je vrijednost polja od jednaka vraća true, inaće false.</returns>
         public bool IsActivityForUserAdded(korisnik_aktivnost userActivity)
         {
             if (context.korisnik_aktivnost.Where(ua => ua.korisnik_id.Equals(userActivity.korisnik_id) && ua.aktivnost_id.Equals(userActivity.aktivnost_id) && ua.od.Equals(userActivity.od)).Count() > 0)
@@ -834,6 +1131,12 @@ namespace DataLayer
             }
             return false;
         }
+
+        /// <summary>
+        /// Provjerava postoji li dodatna oprema za određeno vozilo u bazi.
+        /// </summary>
+        /// <param name="type">Objekt tipa vozilo_dodatna_oprema kojega treba provjeriti.</param>
+        /// <returns>Vrijednost true označava postojanje opreme za određeno vozilo.</returns>
         public bool VehicleContainsGear(vozilo_dodatna_oprema vehicleGear)
         {
             if (context.vozilo_dodatna_oprema.Where(vg => vg.vozilo_id.Equals(vehicleGear.vozilo_id) && vg.oprema_id.Equals(vehicleGear.oprema_id)).Count() > 0)
@@ -842,5 +1145,8 @@ namespace DataLayer
             }
             return false;
         }
+
+        #endregion
+
     }
 }

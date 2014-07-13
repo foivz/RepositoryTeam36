@@ -5,7 +5,7 @@ u
 RepositoryTeam36\Program\DrivingSchool\Model\App.Config
 RepositoryTeam36\Program\DrivingSchool\DrivingSchool\App.config
 
-Ubazi podataka potrebno je dodati usera pod securety 
+U bazi podataka potrebno je dodati usera pod security 
 
 login: 
 username: sef
@@ -17,4 +17,3 @@ pass: mali
 
 
 i dati mu ovlasti da ima pravo na bazu, najbolje dbowner, to su ujedno podaci i za login u aplikaciju
-

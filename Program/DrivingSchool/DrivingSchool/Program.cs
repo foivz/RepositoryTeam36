@@ -17,8 +17,6 @@ namespace DrivingSchool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
-            //InitialLogic.PerformLogin();
             Begin();
         }
 

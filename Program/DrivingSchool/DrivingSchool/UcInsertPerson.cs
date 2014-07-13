@@ -11,6 +11,9 @@ using Model;
 
 namespace DrivingSchool
 {
+    /// <summary>
+    /// Bazna klasa za kontrole za unos korisnika i zaposlenika
+    /// </summary>
     public partial class UcInsertPerson : UserControl
     {
         private ClickedEvent ce = new ClickedEvent();

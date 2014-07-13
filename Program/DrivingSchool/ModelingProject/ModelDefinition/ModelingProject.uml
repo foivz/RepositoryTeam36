@@ -62,6 +62,239 @@
         LastKnownName="DrivingSchool"
         LastKnownLocation="Package_1638.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0de6e92d-6043-4691-a2fa-82fe3dec6c97"
+        name="DrivingSchool::MainForm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c08eed42-690e-4627-abb3-183c02466409"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a0a60fa1-9f80-4579-b44f-be46dcd62441">
+                <propertyInstance
+                  Id="975429cf-9fa4-4b66-8288-7c4af509fd28"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e569d729-3aa3-470d-ab2e-1e687ab41a70">
+                <propertyInstance
+                  Id="1af61f46-bd3c-4bb1-aef7-1db3913d6d2a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63455c28-4663-46fa-b908-6773a3c650d8">
+                <propertyInstance
+                  Id="fb264fc2-63ad-430c-9456-6b617af59de4"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fb15bfd9-eb14-4bf2-8b50-705b92e19f1d">
+                <propertyInstance
+                  Id="1cad9e4e-7eef-43bf-ab21-6ad5630043c8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="577a6c02-93e8-415a-9cff-066789dba23d">
+                <propertyInstance
+                  Id="397bddd5-0361-417a-8adf-3e7882007217"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7dc15e60-aa8e-4c15-a816-db55ab95102a"
+            name="allowPrint"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+                LastKnownName="bool"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f816b19c-7812-4b60-a54e-fa092f0311fb"
+            name="MainForm"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="db779a88-cef2-4388-85ba-eff2a8c7e21c"
+            name="MainForm"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="95903ec0-489c-4ed5-bd40-0cc498da9cd9"
+                  name="user : string; allowPrinting"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f7baf245-9a8f-4e35-ae5a-3ace71214ae7"
+            name="ShowTab"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9d8d7380-4dbd-4898-b4e1-d2138f7166bc"
+                  name="stringToShow"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="274c474f-c668-483c-a5aa-805bb413c8b1"
+                      LastKnownName="string"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2953bb09-16ea-4a5b-a6dd-2d4f164308b3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="963c41b7-13e5-45d5-bd95-caaf3a36e90e"
+            name="ControlTab"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1193209f-cb42-45f1-957c-5204dac8d0a0"
+                  name="sender : object; e"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3a7e99b2-4bb5-428d-93d4-962f8e73735b"
+                      LastKnownName="ToolStripItemClickedEventArgs"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f785f117-3bff-41dd-9486-45fcc6bb8414"
+            name="IsMenuCheckOk"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="aaa54c73-0ca8-495c-a7c2-30e6a0334c82"
+                  name="stringToCheck"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fbab6b35-071f-4879-aafe-007fe12dca8e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9c3a5159-a770-4256-a8e0-829c440c1645"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="274c474f-c668-483c-a5aa-805bb413c8b1"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3a7e99b2-4bb5-428d-93d4-962f8e73735b"
+        name="ToolStripItemClickedEventArgs" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ee4bf7b7-982c-49e8-b027-be066db830a3"
+        LastKnownName="Microsoft"
+        LastKnownLocation="Package_2237.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

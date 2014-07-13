@@ -82,7 +82,6 @@ namespace DrivingSchool
         private void AddCountryId(DataGridViewRow row)
         {
             customGridViewRight.CurrentRow.Cells[2].Value = currentCountryId;
-            return;
         }
 
         private void SaveCountries()

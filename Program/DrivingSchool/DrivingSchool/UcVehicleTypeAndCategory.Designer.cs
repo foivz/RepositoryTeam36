@@ -1,6 +1,6 @@
 ﻿namespace DrivingSchool
 {
-    partial class UcVenicleTypeAndCategory
+    partial class UcVehicleTypeAndCategory
     {
         /// <summary>
         /// Required designer variable.

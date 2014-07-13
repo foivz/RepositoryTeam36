@@ -151,5 +151,11 @@
         LastKnownName="Windows"
         LastKnownLocation="Package2_1638.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="67826fb8-286e-47f3-ac45-06d08e9e9c27"
+        LastKnownName="Drawing"
+        LastKnownLocation="Package_2232.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -34,7 +34,7 @@
             this.tabPageGearAndEmployeeType = new System.Windows.Forms.TabPage();
             this.tabPageUserStatusAndActivity = new System.Windows.Forms.TabPage();
             this.ucTownAndCountry1 = new DrivingSchool.UcTownAndCountry();
-            this.ucVenicleTypeAndCategory1 = new DrivingSchool.UcVenicleTypeAndCategory();
+            this.ucVenicleTypeAndCategory1 = new DrivingSchool.UcVehicleTypeAndCategory();
             this.ucGearAndEmployeeType1 = new DrivingSchool.UcGearAndEmployeeType();
             this.ucUserStatusAndActivity1 = new DrivingSchool.UcUserStatusAndActivity();
             this.tabControlInitial.SuspendLayout();
@@ -162,7 +162,7 @@
         private System.Windows.Forms.TabPage tabPageVehicleTypeAndCategory;
         private System.Windows.Forms.TabPage tabPageGearAndEmployeeType;
         private System.Windows.Forms.TabPage tabPageUserStatusAndActivity;
-        private UcVenicleTypeAndCategory ucVenicleTypeAndCategory1;
+        private UcVehicleTypeAndCategory ucVenicleTypeAndCategory1;
         private UcGearAndEmployeeType ucGearAndEmployeeType1;
         private UcUserStatusAndActivity ucUserStatusAndActivity1;
         private UcTownAndCountry ucTownAndCountry1;

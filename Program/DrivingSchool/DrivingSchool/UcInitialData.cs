@@ -48,7 +48,6 @@ namespace DrivingSchool
                     ce.RaiseEvent(ClickedEvent.ClickedButton.Cancel, this.MyName);
                     break;
             }
-
         }
 
     }

@@ -14,6 +14,8 @@ namespace LogicLayer
         DbClass dbClass = null;
         public Logic() { dbClass = DbClass.Instance; }
 
+        #region Metode za dohvat podataka
+
         /// <summary>
         /// Vraća listu korisnika.
         /// </summary>
@@ -22,139 +24,319 @@ namespace LogicLayer
         {
             return dbClass.GetUsersList();
         }
+
+        /// <summary>
+        /// Vraća listu statusa.
+        /// </summary>
+        /// <returns></returns>
         public List<korisnik_status> GetUserStatusList()
         {
             return dbClass.GetUserStatusList();
         }
+
+        /// <summary>
+        /// Vraća listu aktivnosti.
+        /// </summary>
+        /// <returns></returns>
         public List<aktivnost> GetActivitiesList()
         {
             return dbClass.GetActivitiesList();
         }
+
+        /// <summary>
+        /// Vraća listu aktivnosti za određenog korisnika
+        /// </summary>
+        /// <param name="userId">Id korisnika za kojega treba vratiti aktivnosti.</param>
+        /// <returns></returns>
         public List<korisnik_aktivnost> GetActivitiesForUser(int userId)
         {
             return dbClass.GetUserActivityForUser(userId);
         }
+
+        /// <summary>
+        /// Vraća listu zaposlenika.
+        /// </summary>
+        /// <returns></returns>
         public List<zaposlenik> GetEmployeesList()
         {
             return dbClass.GetEmployeesList();
         }
+
+        /// <summary>
+        /// Vraća listu vrsta zaposlenika.
+        /// </summary>
+        /// <returns></returns>
         public List<zaposlenik_vrsta> GetEmployeeTypesList()
         {
             return dbClass.GetEmployeeTypesList();
         }
+
+        /// <summary>
+        /// Vraća listu država.
+        /// </summary>
+        /// <returns></returns>
         public List<drzava> GetCountriesList()
         {
             return dbClass.GetCountriesList();
         }
+
+        /// <summary>
+        /// Vraća listu gradova za određenu državu.
+        /// </summary>
+        /// <param name="countryId">Id države čije gradove trreba vratiti.</param>
+        /// <returns></returns>
         public List<grad> GetTownsForCountry(int countryId)
         {
             return dbClass.GetTownsForCountry(countryId);
         }
+
+        /// <summary>
+        /// Vraća listu gradova.
+        /// </summary>
+        /// <returns></returns>
         public List<grad> GetTownsList()
         {
             return dbClass.GetTownsList();
         }
+
+        /// <summary>
+        /// Vraća listu vozila.
+        /// </summary>
+        /// <returns></returns>
         public List<vozilo> GetVehiclesList()
         {
             return dbClass.GetVehiclesList();
         }
+
+        /// <summary>
+        /// Vraća listu vrsta vozila.
+        /// </summary>
+        /// <returns></returns>
         public List<vozilo_vrsta> GetVehiclesTypesList()
         {
             return dbClass.GetVehicleTypesList();
         }
+
+        /// <summary>
+        /// Vraća listu kategorija.
+        /// </summary>
+        /// <returns></returns>
         public List<kategorija> GetCategoriesList()
         {
             return dbClass.GetCategoriesList();
         }
+
+        /// <summary>
+        /// Vraća listu dodatna oprema.
+        /// </summary>
+        /// <returns></returns>
         public List<dodatna_oprema> GetGearList()
         {
             return dbClass.GetGearList();
         }
+
+        /// <summary>
+        /// Vraća listu dodatne opreme za određeno vozilo.
+        /// </summary>
+        /// <param name="vehicleId">Id vozila za koje treba vratiti dodatnu opremu.</param>
+        /// <returns></returns>
         public List<vozilo_dodatna_oprema> GetGearForVehicle(int vehicleId)
         {
             return dbClass.GetGearForVehicle(vehicleId);
         }
+
+        /// <summary>
+        /// Vraća listu korisnika za izvješće.
+        /// </summary>
+        /// <returns></returns>
         public List<v_korisnik> GetReportUsers()
         {
             return dbClass.GetReportUsers();
         }
+
+        /// <summary>
+        /// Vraća listu zaposlenika za izvješće.
+        /// </summary>
+        /// <returns></returns>
         public List<v_zaposlenik> GetReportEmployees()
         {
             return dbClass.GetReportEmployees();
         }
+
+        /// <summary>
+        /// Vraća listu vozila za izvješće.
+        /// </summary>
+        /// <returns></returns>
         public List<v_vozilo> GetReportVehicles()
         {
             return dbClass.GetReportVehicles();
         }
 
-        /*metode za spremanje promjena*/
+        #endregion
+
+        #region Metode za spremanje podataka
+
+        /// <summary>
+        /// Sprema promjene podataka o korisnicima.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveUsers(List<korisnik> usersList)
         {
             return dbClass.SaveChangesForUsers(usersList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o zaposlenicima.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveEmployees(List<zaposlenik> employeesList)
         {
             return dbClass.SaveChangesForEmployees(employeesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vozilima.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveVehicles(List<vozilo> vehiclesList)
         {
             return dbClass.SaveChangesForVehicles(vehiclesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o državama.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveCountries(List<drzava> countriesList)
         {
             return dbClass.SaveChangesForCountries(countriesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o gradovima.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveTowns(List<grad> townsList)
         {
             return dbClass.SaveChangesForTowns(townsList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vrstama vozila.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveVehicleTypes(List<vozilo_vrsta> vehicleTypesList)
         {
             return dbClass.SaveChangesForVehicleTypes(vehicleTypesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o kategorijama.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveCategories(List<kategorija> categoriesList)
         {
             return dbClass.SaveChangesForCategories(categoriesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o dodatnoj opremi.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveGear(List<dodatna_oprema> gearList)
         {
             return dbClass.SaveChangesForGear(gearList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o vrstama zaposlenika.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveEmployeeTypes(List<zaposlenik_vrsta> employeeTypesList)
         {
             return dbClass.SaveChangesForEmployeeTypes(employeeTypesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o aktivnostima za određenog korisnika.
+        /// </summary>
+        /// <param name="activitiesToDelete">Lista objekata korisnik_aktivnost koju treba obrisati.</param>
+        /// <param name="userActivitiesList">Lista objekata korisnik_aktivnost koju treba dodati ili izmijeniti.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveUserActivities(List<korisnik_aktivnost> activitiesToDelete, List<korisnik_aktivnost> userActivitiesList)
         {
             return dbClass.SaveUserActivities(activitiesToDelete, userActivitiesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o statusima korisnika.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveUserStatus(List<korisnik_status> userStatusesList)
         {
             return dbClass.SaveChangesForUserStatuses(userStatusesList);
         }
+
+        /// <summary>
+        /// Sprema promjene podataka o aktivnostima.
+        /// </summary>
+        /// <param name="usersList"></param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveActivities(List<aktivnost> activitiesList)
         {
             return dbClass.SaveChangesForActivities(activitiesList);
         }
+
+        /// <summary>
+        /// Sprema podatke o dodatnoj opremi za određeno vozilo.
+        /// </summary>
+        /// <param name="vehicleId">Id vozila za koje treba spremiti podatke o dodatnoj opremi.</param>
+        /// <param name="gear">Lista objekata vozilo_dodatno_oprema koju treba spremiti.</param>
+        /// <returns>Vrijednost true označava uspješno spremanje.</returns>
         public bool SaveVehicleGear(int vehicleId, List<vozilo_dodatna_oprema> gear)
         {
             return dbClass.SaveVehicleGear(vehicleId, gear);
         }
 
-        /*metode za brisanje*/
+        #endregion
+
+        #region Metode za brisanje
+
         /// <summary>
-        /// Omogućava brisanje liste osoba
+        /// Omogućava brisanje liste osoba.
         /// </summary>
-        /// <param name="personsList">Lista osoba koju treba obrisati</param>
-        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje</returns>
+        /// <param name="personsList">Lista objekata osoba koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeletePersonsList(List<osoba> personsList)
         {
             return dbClass.DeletePersonsList(personsList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste vozila.
+        /// </summary>
+        /// <param name="personsList">Lista objekata vozilo koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteVehiclesList(List<vozilo> vehiclesList)
         {
             return dbClass.DeleteVehiclesList(vehiclesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste država.
+        /// </summary>
+        /// <param name="personsList">Lista objekata drzava koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteCountriesList(List<drzava> countriesList)
         {
             //ako postoje gradovi za neku državu ne dozvoljava brisanje, potrebno je prvo obrisati gradove
@@ -162,66 +344,133 @@ namespace LogicLayer
                 return false;
             return dbClass.DeleteCountriesList(countriesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste gradova.
+        /// </summary>
+        /// <param name="personsList">Lista objekata grad koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteTownsList(List<grad> townsList)
         {
             return dbClass.DeleteTownsList(townsList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste vrsta vozila.
+        /// </summary>
+        /// <param name="personsList">Lista objekata vozilo_vrsta koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteVehicleTypesList(List<vozilo_vrsta> vehiclesTypesList)
         {
             return dbClass.DeleteVehicleTypesList(vehiclesTypesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste kategorija.
+        /// </summary>
+        /// <param name="personsList">Lista objekata kategorija koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteCategoriesList(List<kategorija> categoriesList)
         {
             return dbClass.DeleteCategoriesList(categoriesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste dodatne opreme.
+        /// </summary>
+        /// <param name="personsList">Lista objekata dodatna_oprema koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteGearList(List<dodatna_oprema> gearList)
         {
             return dbClass.DeleteGearList(gearList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste vrsta zaposlenika.
+        /// </summary>
+        /// <param name="personsList">Lista objekata zaposlenik_vrsta koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteEmployeeTypesList(List<zaposlenik_vrsta> employeeTypesList)
         {
             return dbClass.DeleteEmployeeTypesList(employeeTypesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste statusa.
+        /// </summary>
+        /// <param name="personsList">Lista objekata korisnik_status koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteStatusesList(List<korisnik_status> statusesList)
         {
             return dbClass.DeleteStatusesList(statusesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste aktivnosti.
+        /// </summary>
+        /// <param name="personsList">Lista objekata aktivnost koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteActivitiesList(List<aktivnost> activitiesList)
         {
             return dbClass.DeleteActivitiesList(activitiesList);
         }
+
+        /// <summary>
+        /// Omogućava brisanje liste aktivnosti određenog korisnika.
+        /// </summary>
+        /// <param name="personsList">Lista objekata korisnik_aktivnost koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
         public bool DeleteUserActivitiesList(List<korisnik_aktivnost> userActivitiesList)
         {
             return dbClass.DeleteUserActivitiesList(userActivitiesList);
         }
-        public bool DeleteGearListForVehicle(int vehicleId, List<vozilo_dodatna_oprema> vehicleGearList)
+
+        /// <summary>
+        /// Omogućava brisanje liste dodatne opreme za određeno vozilo.
+        /// </summary>
+        /// <param name="personsList">Lista objekata vozilo_dodatna_oprema koju treba obrisati.</param>
+        /// <returns>True uspjelo brisanje, false nije uspjelo brisanje.</returns>
+        public bool DeleteGearListForVehicle(List<vozilo_dodatna_oprema> vehicleGearList)
         {
-            return dbClass.DeleteVehicleGearList(vehicleId, vehicleGearList);
+            return dbClass.DeleteVehicleGearList(vehicleGearList);
         }
 
-        /*metode za unos novih*/
+        #endregion
+
+        #region Metode za unos novih
+
         /// <summary>
         /// Dodaje novog zaposlenika.
         /// </summary>
         /// <param name="employee"></param>
-        /// <returns></returns>
+        /// <returns>Vrijednost true označava uspješno dodavanje.</returns>
         public bool AddEmployee(zaposlenik employee)
         {
             dbClass.AddEmployee(employee);
             return true;
         }
+
         /// <summary>
         /// Dodaje novog korisnika.
         /// </summary>
         /// <param name="user"></param>
-        /// <returns></returns>
+        /// <returns>Vrijednost true označava uspješno dodavanje.</returns>
         public bool AddUser(korisnik user)
         {
             dbClass.AddUser(user);
             return true;
         }
 
-        /*metode za provjeru unosa*/
+        #endregion
+
+        #region Metode za provjeru unosa
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom unosa nove osobe(korisnika ili zaposlenika).
+        /// </summary>
+        /// <typeparam name="T">Objekt tipa korisnik ili zaposlenik.</typeparam>
+        /// <param name="person">Osoba koju treba provjeriti.</param>
+        /// <returns>Lista string objekata s popisom kolona u kojima je greška.</returns>
         public List<string> CheckPersonInsert<T>(T person) where T : osoba
         {
             List<string> retInfo = new List<string>();
@@ -253,6 +502,13 @@ namespace LogicLayer
             }
             return retInfo;
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o osobama(korisnicima ili zaposlenicima).
+        /// </summary>
+        /// <typeparam name="T">T može biti ili korisnik ili zaposlenik.</typeparam>
+        /// <param name="personsList">Lista osoba za koju treba provjeriti podatke.</param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckPersonsUpdate<T>(List<T> personsList) where T : osoba
         {
             List<string> retInfo = new List<string>();
@@ -300,6 +556,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o vozilima.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckVehiclesUpdate(List<vozilo> vehiclesList)
         {
             List<string> retInfo = new List<string>();
@@ -322,6 +584,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o državama.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckCountriesUpdate(List<drzava> countriesList)
         {
             List<string> retInfo = new List<string>();
@@ -344,6 +612,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o gradovima.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckTownsUpdate(List<grad> townsList)
         {
             List<string> retInfo = new List<string>();
@@ -366,6 +640,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o vrstama vozila.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckVehicleTypesUpdate(List<vozilo_vrsta> vehicleTypesList)
         {
             List<string> retInfo = new List<string>();
@@ -390,6 +670,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o kategorijama.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckCategoriesUpdate(List<kategorija> categoriesList)
         {
             List<string> retInfo = new List<string>();
@@ -412,6 +698,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o dodatnoj opremi.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckGearUpdate(List<dodatna_oprema> gearList)
         {
             List<string> retInfo = new List<string>();
@@ -434,6 +726,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o vrstama zaposlenika.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckEmployeeTypesUpdate(List<zaposlenik_vrsta> employeeTypesList)
         {
             List<string> retInfo = new List<string>();
@@ -456,6 +754,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o statusima korisnika.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckUserStatusesUpdate(List<korisnik_status> userStatussesList)
         {
             List<string> retInfo = new List<string>();
@@ -478,6 +782,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o aktivnostima.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckActivitiesUpdate(List<aktivnost> activitiesList)
         {
             List<string> retInfo = new List<string>();
@@ -502,6 +812,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o aktivnostima za određenog korisnika.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckActivitiesForUserUpdate(List<korisnik_aktivnost> activitiesToDelete, List<korisnik_aktivnost> changedActivities)
         {
             List<string> retInfo = new List<string>();
@@ -528,6 +844,12 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        /// <summary>
+        /// Provjerava ispravnost podataka prilikom promjene podataka o dodatnoj opremi za određeno vozilo.
+        /// </summary>
+        /// <param name="vehiclesList"></param>
+        /// <returns>Indeks elementa liste i popis kolona u kojima je greška.</returns>
         public KeyValuePair<int, List<string>> CheckVehicleGearUpdate(List<vozilo_dodatna_oprema> vehicleGearList)
         {
             List<string> retInfo = new List<string>();
@@ -550,6 +872,8 @@ namespace LogicLayer
             }
             return new KeyValuePair<int, List<string>>();
         }
+
+        #endregion
 
     }
 }

@@ -64,7 +64,6 @@ namespace DrivingSchool
                     changedRows.Add(CurrentRow.Index);
                 }
             }
-            //changedRows.Add(CurrentRow.Index);
         }
 
         /// <summary>

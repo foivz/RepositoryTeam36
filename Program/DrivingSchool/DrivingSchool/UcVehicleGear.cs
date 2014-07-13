@@ -139,7 +139,7 @@ namespace DrivingSchool
                     return true;
                 List<vozilo_dodatna_oprema> gearList = new List<vozilo_dodatna_oprema>();
                 gearList.Add((vozilo_dodatna_oprema)vozilododatnaopremaBindingSource.Current);
-                bool ret = new Logic().DeleteGearListForVehicle(curVehicleId, gearList);
+                bool ret = new Logic().DeleteGearListForVehicle(gearList);
                 if (ret)
                 {
                     --maxOldRowIndex;

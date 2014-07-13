@@ -182,11 +182,11 @@
     <Compile Include="UcVehicleGear.Designer.cs">
       <DependentUpon>UcVehicleGear.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcVenicleTypeAndCategory.cs">
+    <Compile Include="UcVehicleTypeAndCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcVenicleTypeAndCategory.Designer.cs">
-      <DependentUpon>UcVenicleTypeAndCategory.cs</DependentUpon>
+    <Compile Include="UcVehicleTypeAndCategory.Designer.cs">
+      <DependentUpon>UcVehicleTypeAndCategory.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -260,10 +260,9 @@
     <EmbeddedResource Include="UcVehicleGear.resx">
       <DependentUpon>UcVehicleGear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcVenicleTypeAndCategory.resx">
-      <DependentUpon>UcVenicleTypeAndCategory.cs</DependentUpon>
+    <EmbeddedResource Include="UcVehicleTypeAndCategory.resx">
+      <DependentUpon>UcVehicleTypeAndCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagramPresentation.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Model.aktivnost.datasource" />
     <None Include="Properties\DataSources\Model.dodatna_oprema.datasource" />

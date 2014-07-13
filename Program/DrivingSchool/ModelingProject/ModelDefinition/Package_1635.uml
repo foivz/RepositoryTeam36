@@ -67,6 +67,45 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="454cf403-2de8-4a30-a92e-2e15ec0f0156"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b186abe9-1d19-4b74-b69a-d263acc3b302"
+              LastKnownName="DbClass"
+              LastKnownLocation="Package_1633.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bbcb7024-add7-4f65-b923-25779e31cb5e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2011c6d3-ed1b-41b8-9124-f70bbe87be71"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="9cde4a9b-3ad3-4463-9b51-7bf7e168afb0"
@@ -313,6 +352,45 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="8cd7ea15-e30e-43df-906f-339e83c9e627"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b186abe9-1d19-4b74-b69a-d263acc3b302"
+              LastKnownName="DbClass"
+              LastKnownLocation="Package_1633.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="15f93845-cac8-4b3e-8dd5-29c1cde4a72d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="952656e3-df05-4c0c-ba8c-011c2ea5bfb1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="8f3037cf-12b7-4500-b669-9a855966d640"
@@ -4701,10 +4779,10 @@
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="83967ea0-3184-4d81-b040-7263f7ceaedd"
+                    <classMoniker
+                      Id="d81d07c6-3d91-4fac-8001-44ab90a09287"
                       LastKnownName="T"
-                      LastKnownLocation="Package_1635.uml" />
+                      LastKnownLocation="Package2_1633.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -5907,18 +5985,6 @@
           </operation>
         </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <undefinedType
-        Id="83967ea0-3184-4d81-b040-7263f7ceaedd"
-        name="T">
-        <referencesInternal>
-          <reference
-            Id="8f927c6d-3721-48e7-a1ab-3f3c2689d9b6"
-            handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMislav%2Fdocuments%2Fvisual studio 2012%2FProjects%2FDrivingSchool%2FLogicLayer%2Fbin%2FDebug%2FLogicLayer.dll&quot; Namespace%3DLogicLayer Type%3DLogic Member%3D(Name%3DCheckPersonsUpdate GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(ParameterIdentifier%3D0)]))]) ParameterIdentifier%3D0"
-            tag="ViewCode" />
-        </referencesInternal>
-      </undefinedType>
     </packageHasNamedElement>
   </packagedElements>
 </package>

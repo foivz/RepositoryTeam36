@@ -6,68 +6,33 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2014-07-09T16:41:42" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '9c32f3dc-408a-447a-994d-21817d6e3b13' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::ClickedButtonEventHandler' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::ClickedEvent' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson' -  (Class)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonCancel' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonCancel_Click' -  (Operation)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonCancel_Click::e' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonCancel_Click::sender' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonSave' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonSave_Click' -  (Operation)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonSave_Click::e' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::buttonSave_Click::sender' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::ce' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::comboBoxSex' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::comboBoxTown' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::components' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::Dispose' -  (Operation)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::Dispose::disposing' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::InitializeComponent' -  (Operation)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelAddres' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelDateOfBirth' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelLastName' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelName' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelOib' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelSex' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::labelTown' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::MyName' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::textBoxAddres' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::textBoxDateOfBirth' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::textBoxLastName' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::textBoxName' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::textBoxOib' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::towns' -  (Property)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::UcInsertPerson' -  (Operation)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::UcInsertPerson::eventHandler' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcInsertPerson::UcInsertPerson::name' -  (Parameter)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::Model' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::Model::grad' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic::List&lt;grad‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::ComponentModel' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::ComponentModel::IContainer' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::EventArgs' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Object' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms' -  (Package)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::Button' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::ComboBox' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::Label' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::TextBox' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::UserControl' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcInsertPerson to ModelingProject::System::Windows::Forms::UserControl (Generalization)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcInsertUser to ModelingProject::DrivingSchool::UcInsertPerson (Generalization)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcDataGridForm to ModelingProject::System::Windows::Forms::UserControl (Generalization)" />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="High" Text="(13) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2014-07-09T16:41:57" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2014-07-11T22:39:21" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool' -  (Package)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::ClickedButtonEventHandler' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReport' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle' -  (Class)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::components' -  (Property)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::Dispose' -  (Operation)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::Dispose::disposing' -  (Parameter)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::FillGrid' -  (Operation)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::InitializeComponent' -  (Operation)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::UcReportVehicle' -  (Operation)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::UcReportVehicle::eventHandler' -  (Parameter)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::UcReportVehicle::name' -  (Parameter)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::DrivingSchool::UcReportVehicle::v_voziloBindingSource' -  (Property)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System' -  (Package)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::ComponentModel' -  (Package)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::ComponentModel::IContainer' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows' -  (Package)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms' -  (Package)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Windows::Forms::BindingSource' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcReportVehicle to ModelingProject::DrivingSchool::UcReport (Generalization)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcReport to ModelingProject::System::Windows::Forms::UserControl (Generalization)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcReportUser to ModelingProject::DrivingSchool::UcReport (Generalization)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject::DrivingSchool::UcReportEmployee to ModelingProject::DrivingSchool::UcReport (Generalization)" />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="High" Text="(4) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2014-07-11T22:39:26" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

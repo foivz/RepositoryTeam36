@@ -10,12 +10,12 @@ using LogicLayer;
 
 namespace DrivingSchool
 {
-    public partial class UcVenicleTypeAndCategory : DrivingSchool.UcCommonFormWithSplit
+    public partial class UcVehicleTypeAndCategory : DrivingSchool.UcCommonFormWithSplit
     {
         List<vozilo_vrsta> changedVehicleTypes = new List<vozilo_vrsta>();
         List<kategorija> changedCategories = new List<kategorija>();
 
-        public UcVenicleTypeAndCategory()
+        public UcVehicleTypeAndCategory()
         {
             InitializeComponent();
         }

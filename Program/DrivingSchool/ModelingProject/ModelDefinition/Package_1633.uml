@@ -71,7 +71,7 @@
           <association
             Id="9aae028b-9b28-4655-947a-3acbf549739d"
             isDerived="false"
-            sourceEndRoleName="DbClass"
+            sourceEndRoleName=""
             targetEndRoleName="Instance"
             isLeaf="false"
             isAbstract="false">
@@ -84,7 +84,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="2455820c-2eac-4ae0-9341-3a662281b288"
-                  name="DbClass"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -131,6 +130,43 @@
                       value="1" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6a9ed18d-ff1e-4614-912b-e92dcf74520a"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="053a7d2c-4de1-4c13-8f84-d98e1500cef1"
+              LastKnownName="AutoskolaEntities"
+              LastKnownLocation="Package_1631.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cc069bc6-8253-49ee-ac75-f48767e396e0"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="330e0817-bd6b-447a-afa4-ebbe6201c0ca"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

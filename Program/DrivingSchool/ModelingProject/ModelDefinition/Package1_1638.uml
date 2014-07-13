@@ -15,7 +15,6 @@
       <Interface
         Id="f1371723-2bf7-4d08-adcd-66f7056cf28b"
         name="IContainer"
-        visibility="Private"
         isAbstract="false"
         isLeaf="false">
         <referencesInternal>
