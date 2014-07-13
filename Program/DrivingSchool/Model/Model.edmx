@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutoskolaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AutoskolaModelStoreContainer">
+          <EntitySet Name="aktivnost" EntityType="AutoskolaModel.Store.aktivnost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dodatna_oprema" EntityType="AutoskolaModel.Store.dodatna_oprema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="drzava" EntityType="AutoskolaModel.Store.drzava" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="grad" EntityType="AutoskolaModel.Store.grad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="kategorija" EntityType="AutoskolaModel.Store.kategorija" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="korisnik" EntityType="AutoskolaModel.Store.korisnik" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="korisnik_aktivnost" EntityType="AutoskolaModel.Store.korisnik_aktivnost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="korisnik_status" EntityType="AutoskolaModel.Store.korisnik_status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="osoba" EntityType="AutoskolaModel.Store.osoba" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vozilo" EntityType="AutoskolaModel.Store.vozilo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vozilo_dodatna_oprema" EntityType="AutoskolaModel.Store.vozilo_dodatna_oprema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vozilo_vrsta" EntityType="AutoskolaModel.Store.vozilo_vrsta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="zaposlenik" EntityType="AutoskolaModel.Store.zaposlenik" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="zaposlenik_vrsta" EntityType="AutoskolaModel.Store.zaposlenik_vrsta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="v_korisnik" EntityType="AutoskolaModel.Store.v_korisnik" store:Type="Views" store:Schema="dbo" store:Name="v_korisnik">
+            <DefiningQuery>SELECT 
+      [v_korisnik].[ime] AS [ime], 
+      [v_korisnik].[prezime] AS [prezime], 
+      [v_korisnik].[oib] AS [oib], 
+      [v_korisnik].[nadnevak_rod] AS [nadnevak_rod], 
+      [v_korisnik].[adresa] AS [adresa], 
+      [v_korisnik].[naziv] AS [naziv], 
+      [v_korisnik].[status] AS [status]
+      FROM [dbo].[v_korisnik] AS [v_korisnik]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_vozilo" EntityType="AutoskolaModel.Store.v_vozilo" store:Type="Views" store:Schema="dbo" store:Name="v_vozilo">
+            <DefiningQuery>SELECT 
+      [v_vozilo].[marka] AS [marka], 
+      [v_vozilo].[naziv] AS [naziv], 
+      [v_vozilo].[god_proiz] AS [god_proiz], 
+      [v_vozilo].[nad_prve_reg] AS [nad_prve_reg], 
+      [v_vozilo].[nad_reg_do] AS [nad_reg_do], 
+      [v_vozilo].[vrsta] AS [vrsta], 
+      [v_vozilo].[kategorija] AS [kategorija]
+      FROM [dbo].[v_vozilo] AS [v_vozilo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_zaposlenik" EntityType="AutoskolaModel.Store.v_zaposlenik" store:Type="Views" store:Schema="dbo" store:Name="v_zaposlenik">
+            <DefiningQuery>SELECT 
+      [v_zaposlenik].[ime] AS [ime], 
+      [v_zaposlenik].[prezime] AS [prezime], 
+      [v_zaposlenik].[oib] AS [oib], 
+      [v_zaposlenik].[nadnevak_rod] AS [nadnevak_rod], 
+      [v_zaposlenik].[adresa] AS [adresa], 
+      [v_zaposlenik].[naziv] AS [naziv], 
+      [v_zaposlenik].[vrsta] AS [vrsta]
+      FROM [dbo].[v_zaposlenik] AS [v_zaposlenik]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="Ref_djelatnik_to_djelatnik_vrsta" Association="AutoskolaModel.Store.Ref_djelatnik_to_djelatnik_vrsta">
+            <End Role="zaposlenik_vrsta" EntitySet="zaposlenik_vrsta" />
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_djelatnik_to_osoba" Association="AutoskolaModel.Store.Ref_djelatnik_to_osoba">
+            <End Role="osoba" EntitySet="osoba" />
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_grad_to_drzava" Association="AutoskolaModel.Store.Ref_grad_to_drzava">
+            <End Role="drzava" EntitySet="drzava" />
+            <End Role="grad" EntitySet="grad" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_korisnik_aktivnost_to_korisnik" Association="AutoskolaModel.Store.Ref_korisnik_aktivnost_to_korisnik">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="korisnik_aktivnost" EntitySet="korisnik_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_korisnik_to_korisnik_status" Association="AutoskolaModel.Store.Ref_korisnik_to_korisnik_status">
+            <End Role="korisnik_status" EntitySet="korisnik_status" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_korisnik_to_osoba" Association="AutoskolaModel.Store.Ref_korisnik_to_osoba">
+            <End Role="osoba" EntitySet="osoba" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_osoba_to_grad" Association="AutoskolaModel.Store.Ref_osoba_to_grad">
+            <End Role="grad" EntitySet="grad" />
+            <End Role="osoba" EntitySet="osoba" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_polaznik_aktivnost_to_aktivnosti" Association="AutoskolaModel.Store.Ref_polaznik_aktivnost_to_aktivnosti">
+            <End Role="aktivnost" EntitySet="aktivnost" />
+            <End Role="korisnik_aktivnost" EntitySet="korisnik_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_dodatna_oprema_to_dodatna_oprema" Association="AutoskolaModel.Store.Ref_vozilo_dodatna_oprema_to_dodatna_oprema">
+            <End Role="dodatna_oprema" EntitySet="dodatna_oprema" />
+            <End Role="vozilo_dodatna_oprema" EntitySet="vozilo_dodatna_oprema" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_dodatna_oprema_to_vozilo" Association="AutoskolaModel.Store.Ref_vozilo_dodatna_oprema_to_vozilo">
+            <End Role="vozilo" EntitySet="vozilo" />
+            <End Role="vozilo_dodatna_oprema" EntitySet="vozilo_dodatna_oprema" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_to_vozilo_vrsta" Association="AutoskolaModel.Store.Ref_vozilo_to_vozilo_vrsta">
+            <End Role="vozilo_vrsta" EntitySet="vozilo_vrsta" />
+            <End Role="vozilo" EntitySet="vozilo" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_vrsta_to_kategorija" Association="AutoskolaModel.Store.Ref_vozilo_vrsta_to_kategorija">
+            <End Role="kategorija" EntitySet="kategorija" />
+            <End Role="vozilo_vrsta" EntitySet="vozilo_vrsta" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aktivnost">
+          <Key>
+            <PropertyRef Name="aktivnost_id" />
+          </Key>
+          <Property Name="aktivnost_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="opis" Type="varchar" MaxLength="50" />
+          <Property Name="trajanje_sati" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dodatna_oprema">
+          <Key>
+            <PropertyRef Name="oprema_id" />
+          </Key>
+          <Property Name="oprema_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="opis" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="drzava">
+          <Key>
+            <PropertyRef Name="drzava_id" />
+          </Key>
+          <Property Name="drzava_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="grad">
+          <Key>
+            <PropertyRef Name="grad_id" />
+          </Key>
+          <Property Name="grad_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="drzava_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kategorija">
+          <Key>
+            <PropertyRef Name="kat_id" />
+          </Key>
+          <Property Name="kat_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="opis" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="korisnik_id" />
+          </Key>
+          <Property Name="korisnik_id" Type="int" Nullable="false" />
+          <Property Name="status_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="korisnik_aktivnost">
+          <Key>
+            <PropertyRef Name="korisnik_id" />
+            <PropertyRef Name="aktivnost_id" />
+            <PropertyRef Name="od" />
+          </Key>
+          <Property Name="korisnik_id" Type="int" Nullable="false" />
+          <Property Name="aktivnost_id" Type="int" Nullable="false" />
+          <Property Name="od" Type="date" Nullable="false" />
+          <Property Name="do" Type="date" />
+          <Property Name="polozeno" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="korisnik_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="osoba">
+          <Key>
+            <PropertyRef Name="osoba_id" />
+          </Key>
+          <Property Name="osoba_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="prezime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="oib" Type="char" Nullable="false" MaxLength="11" />
+          <Property Name="nadnevak_rod" Type="date" Nullable="false" />
+          <Property Name="spol" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="adresa" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="grad_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vozilo">
+          <Key>
+            <PropertyRef Name="vozilo_id" />
+          </Key>
+          <Property Name="vozilo_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="marka" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="vrsta_id" Type="int" Nullable="false" />
+          <Property Name="god_proiz" Type="int" Nullable="false" />
+          <Property Name="nad_prve_reg" Type="date" Nullable="false" />
+          <Property Name="nad_reg_do" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vozilo_dodatna_oprema">
+          <Key>
+            <PropertyRef Name="vozilo_id" />
+            <PropertyRef Name="oprema_id" />
+          </Key>
+          <Property Name="vozilo_id" Type="int" Nullable="false" />
+          <Property Name="oprema_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vozilo_vrsta">
+          <Key>
+            <PropertyRef Name="vrsta_id" />
+          </Key>
+          <Property Name="vrsta_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="kat_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="zaposlenik">
+          <Key>
+            <PropertyRef Name="zaposlenik_id" />
+          </Key>
+          <Property Name="zaposlenik_id" Type="int" Nullable="false" />
+          <Property Name="vrsta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="zaposlenik_vrsta">
+          <Key>
+            <PropertyRef Name="vrsta_id" />
+          </Key>
+          <Property Name="vrsta_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="opis" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Autoskola.dbo.v_korisnik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_korisnik">
+          <Key>
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="oib" />
+            <PropertyRef Name="nadnevak_rod" />
+            <PropertyRef Name="adresa" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="prezime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="oib" Type="char" Nullable="false" MaxLength="11" />
+          <Property Name="nadnevak_rod" Type="date" Nullable="false" />
+          <Property Name="adresa" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Autoskola.dbo.v_vozilo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_vozilo">
+          <Key>
+            <PropertyRef Name="marka" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="god_proiz" />
+            <PropertyRef Name="nad_prve_reg" />
+            <PropertyRef Name="nad_reg_do" />
+            <PropertyRef Name="vrsta" />
+            <PropertyRef Name="kategorija" />
+          </Key>
+          <Property Name="marka" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="god_proiz" Type="int" Nullable="false" />
+          <Property Name="nad_prve_reg" Type="date" Nullable="false" />
+          <Property Name="nad_reg_do" Type="date" Nullable="false" />
+          <Property Name="vrsta" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="kategorija" Type="varchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Autoskola.dbo.v_zaposlenik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_zaposlenik">
+          <Key>
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="oib" />
+            <PropertyRef Name="nadnevak_rod" />
+            <PropertyRef Name="adresa" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="vrsta" />
+          </Key>
+          <Property Name="ime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="prezime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="oib" Type="char" Nullable="false" MaxLength="11" />
+          <Property Name="nadnevak_rod" Type="date" Nullable="false" />
+          <Property Name="adresa" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="naziv" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="vrsta" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="Ref_djelatnik_to_djelatnik_vrsta">
+          <End Role="zaposlenik_vrsta" Type="AutoskolaModel.Store.zaposlenik_vrsta" Multiplicity="1" />
+          <End Role="zaposlenik" Type="AutoskolaModel.Store.zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik_vrsta">
+              <PropertyRef Name="vrsta_id" />
+            </Principal>
+            <Dependent Role="zaposlenik">
+              <PropertyRef Name="vrsta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_djelatnik_to_osoba">
+          <End Role="osoba" Type="AutoskolaModel.Store.osoba" Multiplicity="1" />
+          <End Role="zaposlenik" Type="AutoskolaModel.Store.zaposlenik" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="osoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="zaposlenik">
+              <PropertyRef Name="zaposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_grad_to_drzava">
+          <End Role="drzava" Type="AutoskolaModel.Store.drzava" Multiplicity="1" />
+          <End Role="grad" Type="AutoskolaModel.Store.grad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="drzava_id" />
+            </Principal>
+            <Dependent Role="grad">
+              <PropertyRef Name="drzava_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_korisnik_aktivnost_to_korisnik">
+          <End Role="korisnik" Type="AutoskolaModel.Store.korisnik" Multiplicity="1" />
+          <End Role="korisnik_aktivnost" Type="AutoskolaModel.Store.korisnik_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="korisnik_id" />
+            </Principal>
+            <Dependent Role="korisnik_aktivnost">
+              <PropertyRef Name="korisnik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_korisnik_to_korisnik_status">
+          <End Role="korisnik_status" Type="AutoskolaModel.Store.korisnik_status" Multiplicity="1" />
+          <End Role="korisnik" Type="AutoskolaModel.Store.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_korisnik_to_osoba">
+          <End Role="osoba" Type="AutoskolaModel.Store.osoba" Multiplicity="1" />
+          <End Role="korisnik" Type="AutoskolaModel.Store.korisnik" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="osoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="korisnik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_osoba_to_grad">
+          <End Role="grad" Type="AutoskolaModel.Store.grad" Multiplicity="1" />
+          <End Role="osoba" Type="AutoskolaModel.Store.osoba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="grad">
+              <PropertyRef Name="grad_id" />
+            </Principal>
+            <Dependent Role="osoba">
+              <PropertyRef Name="grad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_polaznik_aktivnost_to_aktivnosti">
+          <End Role="aktivnost" Type="AutoskolaModel.Store.aktivnost" Multiplicity="1" />
+          <End Role="korisnik_aktivnost" Type="AutoskolaModel.Store.korisnik_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aktivnost">
+              <PropertyRef Name="aktivnost_id" />
+            </Principal>
+            <Dependent Role="korisnik_aktivnost">
+              <PropertyRef Name="aktivnost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_dodatna_oprema_to_dodatna_oprema">
+          <End Role="dodatna_oprema" Type="AutoskolaModel.Store.dodatna_oprema" Multiplicity="1" />
+          <End Role="vozilo_dodatna_oprema" Type="AutoskolaModel.Store.vozilo_dodatna_oprema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dodatna_oprema">
+              <PropertyRef Name="oprema_id" />
+            </Principal>
+            <Dependent Role="vozilo_dodatna_oprema">
+              <PropertyRef Name="oprema_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_dodatna_oprema_to_vozilo">
+          <End Role="vozilo" Type="AutoskolaModel.Store.vozilo" Multiplicity="1" />
+          <End Role="vozilo_dodatna_oprema" Type="AutoskolaModel.Store.vozilo_dodatna_oprema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vozilo">
+              <PropertyRef Name="vozilo_id" />
+            </Principal>
+            <Dependent Role="vozilo_dodatna_oprema">
+              <PropertyRef Name="vozilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_to_vozilo_vrsta">
+          <End Role="vozilo_vrsta" Type="AutoskolaModel.Store.vozilo_vrsta" Multiplicity="1" />
+          <End Role="vozilo" Type="AutoskolaModel.Store.vozilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vozilo_vrsta">
+              <PropertyRef Name="vrsta_id" />
+            </Principal>
+            <Dependent Role="vozilo">
+              <PropertyRef Name="vrsta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_vrsta_to_kategorija">
+          <End Role="kategorija" Type="AutoskolaModel.Store.kategorija" Multiplicity="1" />
+          <End Role="vozilo_vrsta" Type="AutoskolaModel.Store.vozilo_vrsta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategorija">
+              <PropertyRef Name="kat_id" />
+            </Principal>
+            <Dependent Role="vozilo_vrsta">
+              <PropertyRef Name="kat_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CheckUserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="pass" Type="nvarchar" Mode="In" />
+          <Parameter Name="roleName" Type="varchar" Mode="InOut" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoskolaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AutoskolaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="aktivnost" EntityType="AutoskolaModel.aktivnost" />
+          <EntitySet Name="dodatna_oprema" EntityType="AutoskolaModel.dodatna_oprema" />
+          <EntitySet Name="drzava" EntityType="AutoskolaModel.drzava" />
+          <EntitySet Name="grad" EntityType="AutoskolaModel.grad" />
+          <EntitySet Name="kategorija" EntityType="AutoskolaModel.kategorija" />
+          <EntitySet Name="korisnik_aktivnost" EntityType="AutoskolaModel.korisnik_aktivnost" />
+          <EntitySet Name="korisnik_status" EntityType="AutoskolaModel.korisnik_status" />
+          <EntitySet Name="osoba" EntityType="AutoskolaModel.osoba" />
+          <EntitySet Name="vozilo" EntityType="AutoskolaModel.vozilo" />
+          <EntitySet Name="vozilo_vrsta" EntityType="AutoskolaModel.vozilo_vrsta" />
+          <EntitySet Name="zaposlenik_vrsta" EntityType="AutoskolaModel.zaposlenik_vrsta" />
+          <EntitySet Name="v_korisnik" EntityType="AutoskolaModel.v_korisnik" />
+          <EntitySet Name="v_vozilo" EntityType="AutoskolaModel.v_vozilo" />
+          <EntitySet Name="v_zaposlenik" EntityType="AutoskolaModel.v_zaposlenik" />
+          <AssociationSet Name="Ref_polaznik_aktivnost_to_aktivnosti" Association="AutoskolaModel.Ref_polaznik_aktivnost_to_aktivnosti">
+            <End Role="aktivnost" EntitySet="aktivnost" />
+            <End Role="korisnik_aktivnost" EntitySet="korisnik_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_grad_to_drzava" Association="AutoskolaModel.Ref_grad_to_drzava">
+            <End Role="drzava" EntitySet="drzava" />
+            <End Role="grad" EntitySet="grad" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_osoba_to_grad" Association="AutoskolaModel.Ref_osoba_to_grad">
+            <End Role="grad" EntitySet="grad" />
+            <End Role="osoba" EntitySet="osoba" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_vrsta_to_kategorija" Association="AutoskolaModel.Ref_vozilo_vrsta_to_kategorija">
+            <End Role="kategorija" EntitySet="kategorija" />
+            <End Role="vozilo_vrsta" EntitySet="vozilo_vrsta" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_korisnik_aktivnost_to_korisnik" Association="AutoskolaModel.Ref_korisnik_aktivnost_to_korisnik">
+            <End Role="korisnik" EntitySet="osoba" />
+            <End Role="korisnik_aktivnost" EntitySet="korisnik_aktivnost" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_korisnik_to_korisnik_status" Association="AutoskolaModel.Ref_korisnik_to_korisnik_status">
+            <End Role="korisnik_status" EntitySet="korisnik_status" />
+            <End Role="korisnik" EntitySet="osoba" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_vozilo_to_vozilo_vrsta" Association="AutoskolaModel.Ref_vozilo_to_vozilo_vrsta">
+            <End Role="vozilo_vrsta" EntitySet="vozilo_vrsta" />
+            <End Role="vozilo" EntitySet="vozilo" />
+          </AssociationSet>
+          <AssociationSet Name="Ref_djelatnik_to_djelatnik_vrsta" Association="AutoskolaModel.Ref_djelatnik_to_djelatnik_vrsta">
+            <End Role="zaposlenik_vrsta" EntitySet="zaposlenik_vrsta" />
+            <End Role="zaposlenik" EntitySet="osoba" />
+          </AssociationSet>
+          <FunctionImport Name="CheckUserLogin">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+            <Parameter Name="roleName" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vozilo_dodatna_oprema" EntityType="AutoskolaModel.vozilo_dodatna_oprema" />
+          <AssociationSet Name="dodatna_opremavozilo_dodatna_oprema" Association="AutoskolaModel.dodatna_opremavozilo_dodatna_oprema">
+            <End Role="dodatna_oprema" EntitySet="dodatna_oprema" />
+            <End Role="vozilo_dodatna_oprema" EntitySet="vozilo_dodatna_oprema" />
+          </AssociationSet>
+          <AssociationSet Name="vozilovozilo_dodatna_oprema" Association="AutoskolaModel.vozilovozilo_dodatna_oprema">
+            <End Role="vozilo" EntitySet="vozilo" />
+            <End Role="vozilo_dodatna_oprema" EntitySet="vozilo_dodatna_oprema" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aktivnost">
+          <Key>
+            <PropertyRef Name="aktivnost_id" />
+          </Key>
+          <Property Name="aktivnost_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="trajanje_sati" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="korisnik_aktivnost" Relationship="AutoskolaModel.Ref_polaznik_aktivnost_to_aktivnosti" FromRole="aktivnost" ToRole="korisnik_aktivnost" />
+        </EntityType>
+        <EntityType Name="dodatna_oprema">
+          <Key>
+            <PropertyRef Name="oprema_id" />
+          </Key>
+          <Property Name="oprema_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vozilo_dodatna_oprema" Relationship="AutoskolaModel.dodatna_opremavozilo_dodatna_oprema" FromRole="dodatna_oprema" ToRole="vozilo_dodatna_oprema" />
+        </EntityType>
+        <EntityType Name="drzava">
+          <Key>
+            <PropertyRef Name="drzava_id" />
+          </Key>
+          <Property Name="drzava_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="grad" Relationship="AutoskolaModel.Ref_grad_to_drzava" FromRole="drzava" ToRole="grad" />
+        </EntityType>
+        <EntityType Name="grad">
+          <Key>
+            <PropertyRef Name="grad_id" />
+          </Key>
+          <Property Name="grad_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="drzava_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="drzava" Relationship="AutoskolaModel.Ref_grad_to_drzava" FromRole="grad" ToRole="drzava" />
+          <NavigationProperty Name="osoba" Relationship="AutoskolaModel.Ref_osoba_to_grad" FromRole="grad" ToRole="osoba" />
+        </EntityType>
+        <EntityType Name="kategorija">
+          <Key>
+            <PropertyRef Name="kat_id" />
+          </Key>
+          <Property Name="kat_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vozilo_vrsta" Relationship="AutoskolaModel.Ref_vozilo_vrsta_to_kategorija" FromRole="kategorija" ToRole="vozilo_vrsta" />
+        </EntityType>
+        <EntityType Name="korisnik" BaseType="AutoskolaModel.osoba">
+          <Property Name="status_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="korisnik_aktivnost" Relationship="AutoskolaModel.Ref_korisnik_aktivnost_to_korisnik" FromRole="korisnik" ToRole="korisnik_aktivnost" />
+          <NavigationProperty Name="korisnik_status" Relationship="AutoskolaModel.Ref_korisnik_to_korisnik_status" FromRole="korisnik" ToRole="korisnik_status" />
+        </EntityType>
+        <EntityType Name="korisnik_aktivnost">
+          <Key>
+            <PropertyRef Name="korisnik_id" />
+            <PropertyRef Name="aktivnost_id" />
+            <PropertyRef Name="od" />
+          </Key>
+          <Property Name="korisnik_id" Type="Int32" Nullable="false" />
+          <Property Name="aktivnost_id" Type="Int32" Nullable="false" />
+          <Property Name="od" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="do" Type="DateTime" Precision="0" />
+          <Property Name="polozeno" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="aktivnost" Relationship="AutoskolaModel.Ref_polaznik_aktivnost_to_aktivnosti" FromRole="korisnik_aktivnost" ToRole="aktivnost" />
+          <NavigationProperty Name="korisnik" Relationship="AutoskolaModel.Ref_korisnik_aktivnost_to_korisnik" FromRole="korisnik_aktivnost" ToRole="korisnik" />
+        </EntityType>
+        <EntityType Name="korisnik_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="korisnik" Relationship="AutoskolaModel.Ref_korisnik_to_korisnik_status" FromRole="korisnik_status" ToRole="korisnik" />
+        </EntityType>
+        <EntityType Name="osoba">
+          <Key>
+            <PropertyRef Name="osoba_id" />
+          </Key>
+          <Property Name="osoba_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="oib" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="true" />
+          <Property Name="nadnevak_rod" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="spol" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="adresa" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="grad_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="grad" Relationship="AutoskolaModel.Ref_osoba_to_grad" FromRole="osoba" ToRole="grad" />
+        </EntityType>
+        <EntityType Name="vozilo">
+          <Key>
+            <PropertyRef Name="vozilo_id" />
+          </Key>
+          <Property Name="vozilo_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="marka" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="vrsta_id" Type="Int32" Nullable="false" />
+          <Property Name="god_proiz" Type="Int32" Nullable="false" />
+          <Property Name="nad_prve_reg" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nad_reg_do" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="vozilo_vrsta" Relationship="AutoskolaModel.Ref_vozilo_to_vozilo_vrsta" FromRole="vozilo" ToRole="vozilo_vrsta" />
+          <NavigationProperty Name="vozilo_dodatna_oprema" Relationship="AutoskolaModel.vozilovozilo_dodatna_oprema" FromRole="vozilo" ToRole="vozilo_dodatna_oprema" />
+        </EntityType>
+        <EntityType Name="vozilo_vrsta">
+          <Key>
+            <PropertyRef Name="vrsta_id" />
+          </Key>
+          <Property Name="vrsta_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="kat_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kategorija" Relationship="AutoskolaModel.Ref_vozilo_vrsta_to_kategorija" FromRole="vozilo_vrsta" ToRole="kategorija" />
+          <NavigationProperty Name="vozilo" Relationship="AutoskolaModel.Ref_vozilo_to_vozilo_vrsta" FromRole="vozilo_vrsta" ToRole="vozilo" />
+        </EntityType>
+        <EntityType Name="zaposlenik" BaseType="AutoskolaModel.osoba">
+          <Property Name="vrsta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="zaposlenik_vrsta" Relationship="AutoskolaModel.Ref_djelatnik_to_djelatnik_vrsta" FromRole="zaposlenik" ToRole="zaposlenik_vrsta" />
+        </EntityType>
+        <EntityType Name="zaposlenik_vrsta">
+          <Key>
+            <PropertyRef Name="vrsta_id" />
+          </Key>
+          <Property Name="vrsta_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="zaposlenik" Relationship="AutoskolaModel.Ref_djelatnik_to_djelatnik_vrsta" FromRole="zaposlenik_vrsta" ToRole="zaposlenik" />
+        </EntityType>
+        <EntityType Name="v_korisnik">
+          <Key>
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="oib" />
+            <PropertyRef Name="nadnevak_rod" />
+            <PropertyRef Name="adresa" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="oib" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="true" />
+          <Property Name="nadnevak_rod" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adresa" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_vozilo">
+          <Key>
+            <PropertyRef Name="marka" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="god_proiz" />
+            <PropertyRef Name="nad_prve_reg" />
+            <PropertyRef Name="nad_reg_do" />
+            <PropertyRef Name="vrsta" />
+            <PropertyRef Name="kategorija" />
+          </Key>
+          <Property Name="marka" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="god_proiz" Type="Int32" Nullable="false" />
+          <Property Name="nad_prve_reg" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nad_reg_do" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="vrsta" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="kategorija" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_zaposlenik">
+          <Key>
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="oib" />
+            <PropertyRef Name="nadnevak_rod" />
+            <PropertyRef Name="adresa" />
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="vrsta" />
+          </Key>
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="oib" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="true" />
+          <Property Name="nadnevak_rod" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adresa" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="vrsta" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="Ref_polaznik_aktivnost_to_aktivnosti">
+          <End Role="aktivnost" Type="AutoskolaModel.aktivnost" Multiplicity="1" />
+          <End Role="korisnik_aktivnost" Type="AutoskolaModel.korisnik_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aktivnost">
+              <PropertyRef Name="aktivnost_id" />
+            </Principal>
+            <Dependent Role="korisnik_aktivnost">
+              <PropertyRef Name="aktivnost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_grad_to_drzava">
+          <End Role="drzava" Type="AutoskolaModel.drzava" Multiplicity="1" />
+          <End Role="grad" Type="AutoskolaModel.grad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drzava">
+              <PropertyRef Name="drzava_id" />
+            </Principal>
+            <Dependent Role="grad">
+              <PropertyRef Name="drzava_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_osoba_to_grad">
+          <End Role="grad" Type="AutoskolaModel.grad" Multiplicity="1" />
+          <End Role="osoba" Type="AutoskolaModel.osoba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="grad">
+              <PropertyRef Name="grad_id" />
+            </Principal>
+            <Dependent Role="osoba">
+              <PropertyRef Name="grad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_vrsta_to_kategorija">
+          <End Role="kategorija" Type="AutoskolaModel.kategorija" Multiplicity="1" />
+          <End Role="vozilo_vrsta" Type="AutoskolaModel.vozilo_vrsta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategorija">
+              <PropertyRef Name="kat_id" />
+            </Principal>
+            <Dependent Role="vozilo_vrsta">
+              <PropertyRef Name="kat_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_korisnik_aktivnost_to_korisnik">
+          <End Role="korisnik" Type="AutoskolaModel.korisnik" Multiplicity="1" />
+          <End Role="korisnik_aktivnost" Type="AutoskolaModel.korisnik_aktivnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="korisnik_aktivnost">
+              <PropertyRef Name="korisnik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_korisnik_to_korisnik_status">
+          <End Role="korisnik_status" Type="AutoskolaModel.korisnik_status" Multiplicity="1" />
+          <End Role="korisnik" Type="AutoskolaModel.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_vozilo_to_vozilo_vrsta">
+          <End Role="vozilo_vrsta" Type="AutoskolaModel.vozilo_vrsta" Multiplicity="1" />
+          <End Role="vozilo" Type="AutoskolaModel.vozilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vozilo_vrsta">
+              <PropertyRef Name="vrsta_id" />
+            </Principal>
+            <Dependent Role="vozilo">
+              <PropertyRef Name="vrsta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ref_djelatnik_to_djelatnik_vrsta">
+          <End Role="zaposlenik_vrsta" Type="AutoskolaModel.zaposlenik_vrsta" Multiplicity="1" />
+          <End Role="zaposlenik" Type="AutoskolaModel.zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik_vrsta">
+              <PropertyRef Name="vrsta_id" />
+            </Principal>
+            <Dependent Role="zaposlenik">
+              <PropertyRef Name="vrsta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vozilo_dodatna_oprema" >
+          <Key>
+            <PropertyRef Name="vozilo_id" />
+            <PropertyRef Name="oprema_id" />
+          </Key>
+          <Property Type="Int32" Name="vozilo_id" Nullable="false" />
+          <Property Type="Int32" Name="oprema_id" Nullable="false" />
+          <NavigationProperty Name="dodatna_oprema" Relationship="AutoskolaModel.dodatna_opremavozilo_dodatna_oprema" FromRole="vozilo_dodatna_oprema" ToRole="dodatna_oprema" />
+          <NavigationProperty Name="vozilo" Relationship="AutoskolaModel.vozilovozilo_dodatna_oprema" FromRole="vozilo_dodatna_oprema" ToRole="vozilo" />
+        </EntityType>
+        <Association Name="dodatna_opremavozilo_dodatna_oprema">
+          <End Type="AutoskolaModel.dodatna_oprema" Role="dodatna_oprema" Multiplicity="1" />
+          <End Type="AutoskolaModel.vozilo_dodatna_oprema" Role="vozilo_dodatna_oprema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dodatna_oprema">
+              <PropertyRef Name="oprema_id" />
+            </Principal>
+            <Dependent Role="vozilo_dodatna_oprema">
+              <PropertyRef Name="oprema_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="vozilovozilo_dodatna_oprema">
+          <End Type="AutoskolaModel.vozilo" Role="vozilo" Multiplicity="1" />
+          <End Type="AutoskolaModel.vozilo_dodatna_oprema" Role="vozilo_dodatna_oprema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vozilo">
+              <PropertyRef Name="vozilo_id" />
+            </Principal>
+            <Dependent Role="vozilo_dodatna_oprema">
+              <PropertyRef Name="vozilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoskolaModelStoreContainer" CdmEntityContainer="AutoskolaEntities">
+          <EntitySetMapping Name="aktivnost">
+            <EntityTypeMapping TypeName="AutoskolaModel.aktivnost">
+              <MappingFragment StoreEntitySet="aktivnost">
+                <ScalarProperty Name="aktivnost_id" ColumnName="aktivnost_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="trajanje_sati" ColumnName="trajanje_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dodatna_oprema">
+            <EntityTypeMapping TypeName="AutoskolaModel.dodatna_oprema">
+              <MappingFragment StoreEntitySet="dodatna_oprema">
+                <ScalarProperty Name="oprema_id" ColumnName="oprema_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="drzava">
+            <EntityTypeMapping TypeName="AutoskolaModel.drzava">
+              <MappingFragment StoreEntitySet="drzava">
+                <ScalarProperty Name="drzava_id" ColumnName="drzava_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="grad">
+            <EntityTypeMapping TypeName="AutoskolaModel.grad">
+              <MappingFragment StoreEntitySet="grad">
+                <ScalarProperty Name="grad_id" ColumnName="grad_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="drzava_id" ColumnName="drzava_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategorija">
+            <EntityTypeMapping TypeName="AutoskolaModel.kategorija">
+              <MappingFragment StoreEntitySet="kategorija">
+                <ScalarProperty Name="kat_id" ColumnName="kat_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korisnik_aktivnost">
+            <EntityTypeMapping TypeName="AutoskolaModel.korisnik_aktivnost">
+              <MappingFragment StoreEntitySet="korisnik_aktivnost">
+                <ScalarProperty Name="korisnik_id" ColumnName="korisnik_id" />
+                <ScalarProperty Name="aktivnost_id" ColumnName="aktivnost_id" />
+                <ScalarProperty Name="od" ColumnName="od" />
+                <ScalarProperty Name="do" ColumnName="do" />
+                <ScalarProperty Name="polozeno" ColumnName="polozeno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korisnik_status">
+            <EntityTypeMapping TypeName="AutoskolaModel.korisnik_status">
+              <MappingFragment StoreEntitySet="korisnik_status">
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="osoba">
+            <EntityTypeMapping TypeName="IsTypeOf(AutoskolaModel.osoba)">
+              <MappingFragment StoreEntitySet="osoba">
+                <ScalarProperty Name="osoba_id" ColumnName="osoba_id" />
+                <ScalarProperty Name="grad_id" ColumnName="grad_id" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="spol" ColumnName="spol" />
+                <ScalarProperty Name="nadnevak_rod" ColumnName="nadnevak_rod" />
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(AutoskolaModel.korisnik)">
+              <MappingFragment StoreEntitySet="korisnik">
+                <ScalarProperty Name="osoba_id" ColumnName="korisnik_id" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(AutoskolaModel.zaposlenik)">
+              <MappingFragment StoreEntitySet="zaposlenik">
+                <ScalarProperty Name="osoba_id" ColumnName="zaposlenik_id" />
+                <ScalarProperty Name="vrsta" ColumnName="vrsta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vozilo">
+            <EntityTypeMapping TypeName="AutoskolaModel.vozilo">
+              <MappingFragment StoreEntitySet="vozilo">
+                <ScalarProperty Name="vozilo_id" ColumnName="vozilo_id" />
+                <ScalarProperty Name="marka" ColumnName="marka" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="vrsta_id" ColumnName="vrsta_id" />
+                <ScalarProperty Name="god_proiz" ColumnName="god_proiz" />
+                <ScalarProperty Name="nad_prve_reg" ColumnName="nad_prve_reg" />
+                <ScalarProperty Name="nad_reg_do" ColumnName="nad_reg_do" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vozilo_vrsta">
+            <EntityTypeMapping TypeName="AutoskolaModel.vozilo_vrsta">
+              <MappingFragment StoreEntitySet="vozilo_vrsta">
+                <ScalarProperty Name="vrsta_id" ColumnName="vrsta_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="kat_id" ColumnName="kat_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zaposlenik_vrsta">
+            <EntityTypeMapping TypeName="AutoskolaModel.zaposlenik_vrsta">
+              <MappingFragment StoreEntitySet="zaposlenik_vrsta">
+                <ScalarProperty Name="vrsta_id" ColumnName="vrsta_id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_korisnik">
+            <EntityTypeMapping TypeName="AutoskolaModel.v_korisnik">
+              <MappingFragment StoreEntitySet="v_korisnik">
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="nadnevak_rod" ColumnName="nadnevak_rod" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_vozilo">
+            <EntityTypeMapping TypeName="AutoskolaModel.v_vozilo">
+              <MappingFragment StoreEntitySet="v_vozilo">
+                <ScalarProperty Name="marka" ColumnName="marka" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="god_proiz" ColumnName="god_proiz" />
+                <ScalarProperty Name="nad_prve_reg" ColumnName="nad_prve_reg" />
+                <ScalarProperty Name="nad_reg_do" ColumnName="nad_reg_do" />
+                <ScalarProperty Name="vrsta" ColumnName="vrsta" />
+                <ScalarProperty Name="kategorija" ColumnName="kategorija" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_zaposlenik">
+            <EntityTypeMapping TypeName="AutoskolaModel.v_zaposlenik">
+              <MappingFragment StoreEntitySet="v_zaposlenik">
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="nadnevak_rod" ColumnName="nadnevak_rod" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="vrsta" ColumnName="vrsta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CheckUserLogin" FunctionName="AutoskolaModel.Store.CheckUserLogin" />
+          <EntitySetMapping Name="vozilo_dodatna_oprema">
+            <EntityTypeMapping TypeName="IsTypeOf(AutoskolaModel.vozilo_dodatna_oprema)">
+              <MappingFragment StoreEntitySet="vozilo_dodatna_oprema">
+                <ScalarProperty Name="oprema_id" ColumnName="oprema_id" />
+                <ScalarProperty Name="vozilo_id" ColumnName="vozilo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

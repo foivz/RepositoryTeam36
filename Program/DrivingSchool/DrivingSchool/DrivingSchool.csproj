@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BACBB938-F95D-4CAF-A273-36715124FBDE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrivingSchool</RootNamespace>
+    <AssemblyName>DrivingSchool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClickedEvent.cs" />
+    <Compile Include="CustomGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcCommonFormWithSplit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcCommonFormWithSplit.Designer.cs">
+      <DependentUpon>UcCommonFormWithSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcDataGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcDataGridForm.Designer.cs">
+      <DependentUpon>UcDataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcEmployeeDataGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcEmployeeDataGridForm.Designer.cs">
+      <DependentUpon>UcEmployeeDataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcGearAndEmployeeType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcGearAndEmployeeType.Designer.cs">
+      <DependentUpon>UcGearAndEmployeeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcInitialData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcInitialData.Designer.cs">
+      <DependentUpon>UcInitialData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcInsertEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcInsertEmployee.Designer.cs">
+      <DependentUpon>UcInsertEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcInsertPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcInsertPerson.Designer.cs">
+      <DependentUpon>UcInsertPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcInsertUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcInsertUser.Designer.cs">
+      <DependentUpon>UcInsertUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcReport.Designer.cs">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcReportEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcReportEmployee.Designer.cs">
+      <DependentUpon>UcReportEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcReportUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcReportUser.Designer.cs">
+      <DependentUpon>UcReportUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcReportVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcReportVehicle.Designer.cs">
+      <DependentUpon>UcReportVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTownAndCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTownAndCountry.Designer.cs">
+      <DependentUpon>UcTownAndCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcUserActivitiesDataGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcUserActivitiesDataGridForm.Designer.cs">
+      <DependentUpon>UcUserActivitiesDataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcUserDataGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcUserDataGridForm.Designer.cs">
+      <DependentUpon>UcUserDataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcUserStatusAndActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcUserStatusAndActivity.Designer.cs">
+      <DependentUpon>UcUserStatusAndActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcVehicleDataGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcVehicleDataGridForm.Designer.cs">
+      <DependentUpon>UcVehicleDataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcVehicleGear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcVehicleGear.Designer.cs">
+      <DependentUpon>UcVehicleGear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcVenicleTypeAndCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcVenicleTypeAndCategory.Designer.cs">
+      <DependentUpon>UcVenicleTypeAndCategory.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportEmployee.rdlc" />
+    <EmbeddedResource Include="ReportUser.rdlc" />
+    <EmbeddedResource Include="ReportVehicle.rdlc" />
+    <EmbeddedResource Include="UcCommonFormWithSplit.resx">
+      <DependentUpon>UcCommonFormWithSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcDataGridForm.resx">
+      <DependentUpon>UcDataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcEmployeeDataGridForm.resx">
+      <DependentUpon>UcEmployeeDataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcGearAndEmployeeType.resx">
+      <DependentUpon>UcGearAndEmployeeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcInitialData.resx">
+      <DependentUpon>UcInitialData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcInsertEmployee.resx">
+      <DependentUpon>UcInsertEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcInsertPerson.resx">
+      <DependentUpon>UcInsertPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcInsertUser.resx">
+      <DependentUpon>UcInsertUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcReport.resx">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcReportEmployee.resx">
+      <DependentUpon>UcReportEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcReportUser.resx">
+      <DependentUpon>UcReportUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcReportVehicle.resx">
+      <DependentUpon>UcReportVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTownAndCountry.resx">
+      <DependentUpon>UcTownAndCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcUserActivitiesDataGridForm.resx">
+      <DependentUpon>UcUserActivitiesDataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcUserDataGridForm.resx">
+      <DependentUpon>UcUserDataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcUserStatusAndActivity.resx">
+      <DependentUpon>UcUserStatusAndActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcVehicleDataGridForm.resx">
+      <DependentUpon>UcVehicleDataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcVehicleGear.resx">
+      <DependentUpon>UcVehicleGear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcVenicleTypeAndCategory.resx">
+      <DependentUpon>UcVenicleTypeAndCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagramPresentation.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Model.aktivnost.datasource" />
+    <None Include="Properties\DataSources\Model.dodatna_oprema.datasource" />
+    <None Include="Properties\DataSources\Model.drzava.datasource" />
+    <None Include="Properties\DataSources\Model.grad.datasource" />
+    <None Include="Properties\DataSources\Model.kategorija.datasource" />
+    <None Include="Properties\DataSources\Model.korisnik.datasource" />
+    <None Include="Properties\DataSources\Model.korisnik_aktivnost.datasource" />
+    <None Include="Properties\DataSources\Model.korisnik_status.datasource" />
+    <None Include="Properties\DataSources\Model.vozilo.datasource" />
+    <None Include="Properties\DataSources\Model.vozilo_dodatna_oprema.datasource" />
+    <None Include="Properties\DataSources\Model.vozilo_vrsta.datasource" />
+    <None Include="Properties\DataSources\Model.zaposlenik.datasource" />
+    <None Include="Properties\DataSources\Model.zaposlenik_vrsta.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{d4678eac-6756-476c-9a73-18ced6ec3f6c}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{674b2cbd-66e9-4ea8-899d-557b2cabd559}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\1403396672_27831.ico" />
+    <Content Include="Resources\1403396681_27855.ico" />
+    <Content Include="Resources\1403396684_27879.ico" />
+    <Content Include="Resources\1403396690_27862.ico" />
+    <Content Include="Resources\1403396696_27868.ico" />
+    <Content Include="Resources\1403396700_27870.ico" />
+    <Content Include="Resources\1403396703_27887.ico" />
+    <Content Include="Resources\1403396719_27839.ico" />
+    <Content Include="Resources\1403397734_88256.ico" />
+    <Content Include="Resources\1403397963_7268.ico" />
+    <Content Include="Resources\cancel.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

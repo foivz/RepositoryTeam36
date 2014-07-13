@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Model.AutoskolaEntities">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAABAABAAIABAAIAABAAIAAEAEAACAAIAAACAQEAAA=</HashCode>
+      <FileName>AutoskolaEntities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.aktivnost">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAAAAAAAAAAAAAAAQAAAAAACAAAAAACAAAAAA=</HashCode>
+      <FileName>aktivnost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.dodatna_oprema">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dodatna_oprema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.drzava">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>drzava.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.grad">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQAAAAAAIAAAAAgAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>grad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.kategorija">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAABAAAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>kategorija.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.korisnik">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAQAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>korisnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.korisnik_aktivnost">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAQCAIAA=</HashCode>
+      <FileName>korisnik_aktivnost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.korisnik_status">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>korisnik_status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.osoba">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAQAJAEAAAAQAAAAAAAgAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>osoba.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.v_korisnik">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAEAAABAEAAAAAAAAAAAAgAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>v_korisnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.v_vozilo">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAABAAAAAAAABAAAAAAAAAAKAAAAACAAAQAAA=</HashCode>
+      <FileName>v_vozilo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.v_zaposlenik">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAAABAEAAAAAAAAAAAAgAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>v_zaposlenik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.vozilo">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQABAAAAABAABAAAAAAAAAAAAAAAAIAAAAECAAAQAAA=</HashCode>
+      <FileName>vozilo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.vozilo_dodatna_oprema">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAABAAIAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>vozilo_dodatna_oprema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.vozilo_vrsta">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAEBAAAAAAAEAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>vozilo_vrsta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.zaposlenik">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAA=</HashCode>
+      <FileName>zaposlenik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.zaposlenik_vrsta">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>zaposlenik_vrsta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
