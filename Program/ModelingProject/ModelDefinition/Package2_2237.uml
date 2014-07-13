@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9e58fccd-f230-4f50-838c-821fa814b427"
+  name="WinForms"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a16d19d5-2204-4729-8dd3-223589e676d6"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMicrosoft.Reporting.WinForms"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="c3f4f336-4310-4e21-a989-3148a464d61c"
+        name="ReportViewer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="62b8ce7e-5013-4c80-9943-c55aa9f3686e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FMicrosoft Visual Studio 11.0%2FReportViewer%2FMicrosoft.ReportViewer.WinForms.dll&quot; Namespace%3DMicrosoft.Reporting.WinForms Type%3DReportViewer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5b499507-f655-4ead-b83a-8f0afe6386aa"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="41037c4f-f378-4fba-ad09-157f807b0ca6">
+                <propertyInstance
+                  Id="f075637c-23f0-4d0d-ac5d-c84f6d32efcb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bbd12c82-360c-423a-a78d-2df280cd30c6">
+                <propertyInstance
+                  Id="deb35255-00ed-44b1-bc9b-5a4eb737941e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bdc2d8a2-7db5-46cb-94de-921b86c75643">
+                <propertyInstance
+                  Id="3dc401ea-3b34-48ac-8d18-90c90dc98371"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="631ccb35-6902-48ac-a9df-485bc8cf0ce5">
+                <propertyInstance
+                  Id="34f3b382-1fbf-430d-bb56-8c99a4610630"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8963fdb-0867-4d09-b807-746d0a2c640a">
+                <propertyInstance
+                  Id="99b505af-e76e-4176-b271-509201450d24"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="548d3de3-8197-4b7d-bd15-49e0d58241a1"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d17a2bd1-c603-4a55-ad11-1fc0777b0212"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package3_1638.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
